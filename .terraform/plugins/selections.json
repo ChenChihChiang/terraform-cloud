@@ -1,0 +1,6 @@
+{
+  "registry.terraform.io/hashicorp/random": {
+    "hash": "h1:yhHJpb4IfQQfuio7qjUXuUFTU/s+ensuEpm23A+VWz0=",
+    "version": "3.0.0"
+  }
+}
