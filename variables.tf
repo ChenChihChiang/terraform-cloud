@@ -5,5 +5,5 @@ variable "random_min" {
 
 variable "random_max" {
   type        = number
-  default     = 1000000
+  default     = 900000
 }
