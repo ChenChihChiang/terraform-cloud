@@ -4,8 +4,8 @@ resource "aws_ecs_service" "nginx" {
   task_definition = aws_ecs_task_definition.nginx.arn
   desired_count   = 1
 
-  launch_type = FARGATE
-  
+  launch_type = "FARGATE"
+
   ordered_placement_strategy {
     type  = "binpack"
     field = "cpu"
