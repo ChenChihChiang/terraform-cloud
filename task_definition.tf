@@ -1,8 +1,8 @@
-resource "aws_ecs_task_definition" "service" {
+resource "aws_ecs_task_definition" "nginx" {
   family = "service"
   container_definitions = jsonencode([
     {
-      name      = "first"
+      name      = "nginx"
       image     = "library/nginx"
       cpu       = 10
       memory    = 512

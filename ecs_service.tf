@@ -1,7 +1,7 @@
 resource "aws_ecs_service" "nginx" {
   name            = "nginx"
   cluster         = aws_ecs_cluster.john.id
-  task_definition = aws_ecs_task_definition.service.arn
+  task_definition = aws_ecs_task_definition.nginx.arn
   desired_count   = 1
 
   ordered_placement_strategy {
