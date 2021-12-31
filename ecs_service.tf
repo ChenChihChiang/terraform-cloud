@@ -11,11 +11,6 @@ resource "aws_ecs_service" "nginx" {
     security_groups = [aws_security_group.allow_tls.id]
   }
 
-  ordered_placement_strategy {
-    type  = "binpack"
-    field = "cpu"
-  }
-
   placement_constraints {
     type       = "memberOf"
     expression = "attribute:ecs.availability-zone in [ap-northeast-1a, ap-northeast-1c]"
