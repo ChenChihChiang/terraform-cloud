@@ -6,8 +6,8 @@ module "alb" {
 
   load_balancer_type = "application"
 
-  vpc_id             = vpc.aws_vpc.dev_vpc.vpc_id
-  subnets            = vpc.aws_vpc.dev_vpc.public_subnets
+  vpc_id             = module.dev_vpc.vpc_id
+  subnets            = module.dev_vpc.public_subnets
   security_groups    = [aws_security_group.allow_tls.id]
 
   access_logs = {
