@@ -6,11 +6,14 @@ resource "aws_ecs_task_definition" "nginx" {
   memory                   = 2048
   task_role_arn            = "arn:aws:iam::312490145519:role/ecsTaskExecutionRole"
   execution_role_arn       = "arn:aws:iam::312490145519:role/ecsTaskExecutionRole"
+  lifecycle = {
+    ignore_changes = ["*"]
+  }
   container_definitions    = <<TASK_DEFINITION
 [
   {
     "name": "nginx",
-    "image": "docker.io/library/nginx:latest",
+    "image": "docker.io/library/httpd:latest",
     "essential": true,
     "portMappings": [
       {
