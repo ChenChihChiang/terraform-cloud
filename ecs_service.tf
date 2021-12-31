@@ -6,6 +6,11 @@ resource "aws_ecs_service" "nginx" {
 
   launch_type = "FARGATE"
 
+  network_configuration {
+    subnets = [for subnet in module.dev_vpc.public_subnets : subnet]
+    security_groups = [aws_security_group.allow_tls.id]
+  }
+
   ordered_placement_strategy {
     type  = "binpack"
     field = "cpu"
