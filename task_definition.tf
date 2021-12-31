@@ -11,7 +11,7 @@ resource "aws_ecs_task_definition" "nginx" {
     "image": "library/nginx",
     "cpu": 1024,
     "memory": 2048,
-    "essential": true
+    "essential": true,
       portMappings = [
         {
           containerPort = 80
