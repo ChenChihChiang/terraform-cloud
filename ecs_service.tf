@@ -11,6 +11,12 @@ resource "aws_ecs_service" "nginx" {
     security_groups = [aws_security_group.allow_tls.id]
   }
 
+  load_balancer {
+    target_group_arn = aws_lb_target_group.nginx_tg.arn 
+    container_name   = "http"
+    container_port   = 80
+  }
+
   tags = {
     Terraform = "true"
     Environment = "dev"
