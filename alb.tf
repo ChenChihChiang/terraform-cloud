@@ -26,12 +26,12 @@ resource "aws_lb_target_group" "nginx_tg" {
   }
 }
 
-resource "aws_lb_listener" "front_end" {
-  load_balancer_arn = aws_lb.front_end.arn
+resource "aws_lb_listener" "nginx" {
+  load_balancer_arn = aws_lb.dev_alb.arn
   port              = "443"
   protocol          = "HTTPS"
   ssl_policy        = "ELBSecurityPolicy-2016-08"
-  certificate_arn   = aws_acm_certificate.chenchihchiang_tw.id
+  certificate_arn   = data.aws_acm_certificate.chenchihchiang_tw.id
 
   default_action {
     type             = "forward"
