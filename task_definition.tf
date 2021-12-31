@@ -8,7 +8,7 @@ resource "aws_ecs_task_definition" "nginx" {
 [
   {
     "name": "nginx",
-    "image": "library/nginx",
+    "image": "docker.io/library/nginx:latest",
     "cpu": 1024,
     "memory": 2048,
     "essential": true,
