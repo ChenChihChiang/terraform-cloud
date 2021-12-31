@@ -2,7 +2,7 @@ resource "aws_ecs_task_definition" "nginx" {
   family                   = "nginx"
   requires_compatibilities = ["FARGATE"]
   network_mode             = "awsvpc"
-  cpu                      = 1
+  cpu                      = 10
   memory                   = 1024
   task_role_arn            = "arn:aws:iam::312490145519:role/ecsTaskExecutionRole"
   execution_role_arn       = "arn:aws:iam::312490145519:role/ecsTaskExecutionRole"
@@ -11,7 +11,7 @@ resource "aws_ecs_task_definition" "nginx" {
   {
     "name": "nginx",
     "image": "docker.io/library/nginx:latest",
-    "cpu": 1,
+    "cpu": 10,
     "memory": 1024,
     "essential": true,
     "portMappings": [
