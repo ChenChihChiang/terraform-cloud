@@ -11,11 +11,6 @@ resource "aws_ecs_service" "nginx" {
     security_groups = [aws_security_group.allow_tls.id]
   }
 
-  placement_constraints {
-    type       = "memberOf"
-    expression = "attribute:ecs.availability-zone in [ap-northeast-1a, ap-northeast-1c]"
-  }
-
   tags = {
     Terraform = "true"
     Environment = "dev"
