@@ -1,5 +1,5 @@
 resource "aws_lb" "dev_alb" {
-  name               = "dev_alb"
+  name               = "dev-alb"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.allow_tls.id]
