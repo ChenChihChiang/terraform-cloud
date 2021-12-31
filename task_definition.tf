@@ -4,7 +4,7 @@ resource "aws_ecs_task_definition" "nginx" {
   network_mode             = "awsvpc"
   cpu                      = 1024
   memory                   = 2048
-  task_role_arn            = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
+  task_role_arn            = "arn:aws:iam::312490145519:role/ecsTaskExecutionRole"
   container_definitions    = <<TASK_DEFINITION
 [
   {
