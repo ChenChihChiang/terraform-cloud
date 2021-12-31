@@ -6,6 +6,10 @@ resource "aws_ecs_service" "nginx" {
 
   launch_type = "FARGATE"
 
+  lifecycle = {
+    ignore_changes = ["task_definition"]
+  }
+
   network_configuration {
     subnets = [for subnet in module.dev_vpc.private_subnets : subnet]
     security_groups = [aws_security_group.allow_http.id]
