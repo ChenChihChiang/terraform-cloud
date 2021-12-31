@@ -1,4 +1,4 @@
-locals {
-  abc = {}
-  def = {}
-}
+//locals {
+//  abc = {}
+//  def = {}
+//}
