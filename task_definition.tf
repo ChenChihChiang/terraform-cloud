@@ -1,5 +1,6 @@
 resource "aws_ecs_task_definition" "nginx" {
   family = "service"
+  requires_compatibilities = ["FARGATE"]
   container_definitions = jsonencode([
     {
       name      = "nginx"
