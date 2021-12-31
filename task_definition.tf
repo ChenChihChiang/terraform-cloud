@@ -8,7 +8,7 @@ resource "aws_ecs_task_definition" "nginx" {
 [
   {
     "name": "nginx",
-    "image": "docker.io/library/nginx:latest",
+    "image": "312490145519.dkr.ecr.ap-northeast-1.amazonaws.com/nginx:latest",
     "cpu": 512,
     "memory": 1024,
     "essential": true,
@@ -27,5 +27,5 @@ TASK_DEFINITION
     Terraform = "true"
     Environment = "dev"
   }
-  
+
 }
