@@ -7,7 +7,7 @@ resource "aws_ecs_service" "nginx" {
   launch_type = "FARGATE"
 
   network_configuration {
-    subnets = ["subnet-075cba30be46ffaae","subnet-028870594e8e6a304","subnet-01cb3df2da0522a1f"]
+    subnets = [for subnet in module.dev_vpc.private_subnets : subnet]
     security_groups = [aws_security_group.allow_tls.id]
   }
 
