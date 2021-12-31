@@ -1,5 +1,5 @@
-resource "aws_ecs_cluster" "john" {
-  name = "john"
+resource "aws_ecs_cluster" "dev_ecs" {
+  name = "dev_ecs"
 
   setting {
     name  = "containerInsights"
