@@ -31,7 +31,7 @@ resource "aws_lb_listener" "nginx" {
   port              = "443"
   protocol          = "HTTPS"
   ssl_policy        = "ELBSecurityPolicy-2016-08"
-  certificate_arn   = data.aws_acm_certificate.chenchihchiang_tw.id
+  certificate_arn   = aws_acm_certificate.dev_chenchihchiang_tw.id
 
   default_action {
     type             = "forward"
