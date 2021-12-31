@@ -11,13 +11,13 @@ resource "aws_ecs_task_definition" "nginx" {
     "image": "library/nginx",
     "cpu": 1024,
     "memory": 2048,
-    "essential": true,
-      portMappings = [
-        {
-          containerPort = 80
-          hostPort      = 80
-        }
-  }
+    "essential": true
+    "portMappings" = [
+      {
+        "containerPort": 80
+        "hostPort":      80
+      }
+}
 ]
 TASK_DEFINITION
 
