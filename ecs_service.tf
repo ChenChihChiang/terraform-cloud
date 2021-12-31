@@ -8,7 +8,7 @@ resource "aws_ecs_service" "nginx" {
 
   network_configuration {
     subnets = [for subnet in module.dev_vpc.private_subnets : subnet]
-    security_groups = [aws_security_group.allow_tls.id]
+    security_groups = [aws_security_group.allow_http.id]
   }
 
   load_balancer {
