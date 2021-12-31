@@ -7,12 +7,12 @@ resource "aws_ecs_service" "nginx" {
   launch_type = "FARGATE"
 
   network_configuration {
-    subnets = [for subnet in module.dev_vpc.public_subnets : subnet]
+    subnets = [for subnet in module.dev_vpc.private_subnets : subnet]
     security_groups = [aws_security_group.allow_tls.id]
   }
 
   load_balancer {
-    target_group_arn = aws_lb_target_group.nginx_tg.arn 
+    target_group_arn = aws_lb_target_group.nginx_tg.arn
     container_name   = "nginx"
     container_port   = 80
   }
