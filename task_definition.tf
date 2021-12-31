@@ -1,29 +1,19 @@
 resource "aws_ecs_task_definition" "nginx" {
-  family = "service"
+  family                   = "nginx"
   requires_compatibilities = ["FARGATE"]
-  container_definitions = jsonencode([
-    {
-      name      = "nginx"
-      image     = "library/nginx"
-      cpu       = 10
-      memory    = 512
-      essential = true
-      portMappings = [
-        {
-          containerPort = 80
-          hostPort      = 80
-        }
-      ]
-    }
-  ])
-
-  volume {
-    name      = "service-storage"
-    host_path = "/ecs/service-storage"
+  network_mode             = "awsvpc"
+  cpu                      = 1024
+  memory                   = 2048
+  container_definitions    = <<TASK_DEFINITION
+[
+  {
+    "name": "nginx",
+    "image": "library/nginx",
+    "cpu": 1024,
+    "memory": 2048,
+    "essential": true
   }
+]
+TASK_DEFINITION
 
-  placement_constraints {
-    type       = "memberOf"
-    expression = "attribute:ecs.availability-zone in [ap-northeast-1a, ap-northeast-1c]"
-  }
 }
