@@ -6,8 +6,6 @@ resource "aws_ecs_service" "nginx" {
 
   launch_type = "FARGATE"
 
-  network_configuration = "awsvpc"
-
   ordered_placement_strategy {
     type  = "binpack"
     field = "cpu"
