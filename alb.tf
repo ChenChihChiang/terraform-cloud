@@ -6,7 +6,7 @@ module "alb" {
 
   load_balancer_type = "application"
 
-  vpc_id             = aws_vpc.dev-vpc.id
+  vpc_id             = aws_vpc.dev-vpc.vpc_id
   subnets            = aws_vpc.dev-vpc.public_subnets
   security_groups    = [aws_security_group.allow_tls.id]
 
