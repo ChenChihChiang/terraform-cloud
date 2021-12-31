@@ -1,7 +1,7 @@
 resource "aws_security_group" "allow_tls" {
   name        = "allow_tls"
   description = "Allow TLS inbound traffic"
-  vpc_id      = aws_vpc.dev-vpc.vpc_id
+  vpc_id      = vpc.aws_vpc.dev_vpc.vpc_id
 
   ingress {
     description      = "TLS from VPC"
@@ -24,5 +24,5 @@ resource "aws_security_group" "allow_tls" {
     Terraform = "true"
     Environment = "dev"
   }
-  
+
 }

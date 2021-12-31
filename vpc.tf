@@ -1,7 +1,7 @@
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
 
-  name = "dev-vpc"
+  name = "dev_vpc"
   cidr = "10.0.0.0/16"
 
   azs             = ["ap-northeast-1a", "ap-northeast-1c", "ap-northeast-1d"]
@@ -15,5 +15,5 @@ module "vpc" {
     Terraform = "true"
     Environment = "dev"
   }
-  
+
 }
