@@ -17,7 +17,8 @@ resource "aws_ecs_task_definition" "nginx" {
         "containerPort": 80,
         "hostPort":      80
       }
-}
+    ]
+  }
 ]
 TASK_DEFINITION
 
