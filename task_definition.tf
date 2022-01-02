@@ -16,7 +16,7 @@ resource "aws_ecs_task_definition" "nginx" {
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-region" : "ap-northeast-1",
-                    "awslogs-group" : "dev",
+                    "awslogs-group" : "/ecs/dev_ecs/",
                     "awslogs-stream-prefix" : "dev-nginx"
                 }
     },
