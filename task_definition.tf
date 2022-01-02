@@ -10,7 +10,7 @@ resource "aws_ecs_task_definition" "nginx" {
 [
   {
     "name": "nginx",
-    "image": "docker.io/library/nginx:latest",
+    "image": "docker.io/library/httpd:latest",
     "essential": true,
     "logConfiguration": {
                 "logDriver": "awslogs",
